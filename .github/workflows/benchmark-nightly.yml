@@ -1,23 +1,23 @@
 name: Run Nightly Benchmark
 run-name: Benchmark ${{ inputs.n8n_tag || 'nightly' }}
 
-on:
-  schedule:
-    - cron: '30 1,2,3 * * *'
-  workflow_dispatch:
-    inputs:
-      debug:
-        description: 'Use debug logging'
-        required: true
-        default: 'false'
-      n8n_tag:
-        description: 'Name of the n8n docker tag to run the benchmark against.'
-        required: true
-        default: 'nightly'
-      benchmark_tag:
-        description: 'Name of the benchmark cli docker tag to run the benchmark with.'
-        required: true
-        default: 'latest'
+#on:
+#  schedule:
+#    - cron: '30 1,2,3 * * *'
+#  workflow_dispatch:
+#    inputs:
+#      debug:
+#        description: 'Use debug logging'
+#        required: true
+#        default: 'false'
+#      n8n_tag:
+#        description: 'Name of the n8n docker tag to run the benchmark against.'
+#        required: true
+#        default: 'nightly'
+#      benchmark_tag:
+#        description: 'Name of the benchmark cli docker tag to run the benchmark with.'
+#        required: true
+#        default: 'latest'
 
 env:
   ARM_CLIENT_ID: ${{ secrets.BENCHMARK_ARM_CLIENT_ID }}
